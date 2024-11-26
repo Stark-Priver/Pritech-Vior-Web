@@ -215,3 +215,33 @@
   background: #050816; /* Inner card background color */
   border-radius: 5px;
 }
+
+/* Outline effect for 'Pritech Vior' */
+.outline-text {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  color: transparent; /* Make the text color transparent */
+  -webkit-background-clip: text; /* Use background image to clip to text */
+  background-image: linear-gradient(
+    45deg,
+    #915eff,
+    #ff7dff
+  ); /* Gradient color */
+}
+
+.outline-text::before {
+  content: "Pritech Vior"; /* Make sure to repeat the text */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    45deg,
+    #915eff,
+    #ff7dff
+  ); /* Gradient color */
+  text-shadow: 0px 0px 8px rgba(145, 94, 255, 0.6); /* Glow effect */
+}

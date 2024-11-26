@@ -11,12 +11,16 @@ import {
   Works,
   StarsCanvas,
   Footer,
+  CustomCursor, // Import CustomCursor
+  Staff, // Import Staff
 } from "./components";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
+        {/* Add CustomCursor as a sibling to the entire app */}
+        <CustomCursor />
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
@@ -26,6 +30,7 @@ const App = () => {
         <Tech />
         <Works />
         <Feedbacks />
+        <Staff /> {/* Include Staff Section */}
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />

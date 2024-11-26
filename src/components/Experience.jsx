@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles";
-import { experiences } from "../constants";
+import { experiences } from "../constants"; // Keep using experiences for services
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
@@ -19,7 +19,7 @@ const ExperienceCard = ({ experience }) => {
         background: "#1d1836",
         color: "#fff",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
@@ -38,7 +38,8 @@ const ExperienceCard = ({ experience }) => {
           className="text-secondary text-[16px] font-semibold"
           style={{ margin: 0 }}
         >
-          {experience.company_name}
+          {experience.company_name}{" "}
+          {/* You can replace this with the actual service name */}
         </p>
       </div>
 
@@ -61,10 +62,10 @@ const Experience = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center`}>
-          Learning Experience Flow
+          Our Services and Learning Experience
         </p>
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          Levels of Experience.
+          Services at Pritech Vior Camp.
         </h2>
       </motion.div>
 
