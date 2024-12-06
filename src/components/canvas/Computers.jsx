@@ -22,21 +22,21 @@ const Computers = ({ isMobile }) => {
       />
 
       {/* Add a point light for localized lighting */}
-      <pointLight position={[-5, 5, 5]} intensity={1} />
+      <pointLight position={[-5, 5, 5]} intensity={0.7} />
 
       {/* Add a spotlight for focused lighting */}
       <spotLight
         position={[10, 10, 10]}
         angle={0.15}
         penumbra={1}
-        intensity={2}
+        intensity={1.5}
         castShadow
       />
 
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+        scale={isMobile ? 0.6 : 0.75} // Adjusted for mobile
+        position={isMobile ? [0, -2, -3] : [0, -2.5, -2]} // Adjusted for mobile
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -71,8 +71,7 @@ const ComputersCanvas = () => {
     <Canvas
       frameloop="demand"
       shadows
-      // dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [20, 3, 5], fov: isMobile ? 35 : 25 }} // Adjusted FOV for mobile
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
